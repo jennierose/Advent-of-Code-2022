@@ -13,8 +13,6 @@ type LoseDrawWin =
     | Draw = 3
     | Win = 6
 
-#nowarn "25"
-
 let rockPaperScissorsScore (abc: string) (xyz: string) : int =
     let myMove: int =
         match xyz with
