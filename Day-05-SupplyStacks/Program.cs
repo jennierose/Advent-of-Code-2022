@@ -1,23 +1,25 @@
 using System.Text.RegularExpressions;
-using StackCollection = Utils.StackCollection<string>;
 using StackCollectionExtensions;
+using StackCollection = Utils.StackCollection<int, string>;
 
 class Program {
     private static readonly Regex StackItemPattern = new(@"(\s{3,4}|\[\w\]\s?)");
-    private static readonly Regex StackItemLinePattern = new($"^{StackItemPattern}*$");
 
     internal static StackCollection ParseInput(string columnLabels, IEnumerable<string> inputLines) {
         StackCollection stacks = new();
-        string[] keys = columnLabels.Split(Array.Empty<char>(), StringSplitOptions.RemoveEmptyEntries);
+        IEnumerable<int> keys = columnLabels
+            .Split(Array.Empty<char>(), StringSplitOptions.RemoveEmptyEntries)
+            .Select(int.Parse);
 
         foreach (string line in inputLines) {
-            IEnumerable<string> items =
-                StackItemPattern.Matches(line).Select(m => m.Value.Trim().Trim('[', ']'));
+            var items = StackItemPattern
+                .Matches(line)
+                .Select(match => match.Value.Trim().Trim('[', ']'))
+                .Zip(keys)
+                .Where(pair => pair.First.Length > 0);
 
-            foreach ((string key, string item) in keys.Zip(items)) {
-                if (item.Length > 0) {
-                    stacks.Push(key, item);
-                }
+            foreach ((string item, int key) in items) {
+                stacks.Push(key, item);
             }
         }
 
@@ -31,10 +33,11 @@ class Program {
 
         using (TextReader streamReader = new StreamReader(@"./input")) {
             string? line;
-            Regex columnLabelsPattern = new(@"^\s*(\w+\s+)+$");
+            Regex columnLabelsPattern = new(@"^\s*(\d+\s+)+$");
+            Regex stackItemLinePattern = new($"^{StackItemPattern}*$");
 
             while ((line = streamReader.ReadLine()) != null) {
-                if (StackItemLinePattern.IsMatch(line)) {
+                if (stackItemLinePattern.IsMatch(line)) {
                     inputLines.AddFirst(line);
                 } else if (columnLabelsPattern.IsMatch(line)) {
                     columnLabels = line.Trim();
