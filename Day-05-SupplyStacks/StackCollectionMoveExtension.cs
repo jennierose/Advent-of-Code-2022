@@ -26,7 +26,7 @@ namespace StackCollectionExtensions {
         }
     }
 
-    public static class StackCollectionMoves {
+    public static class StackCollectionMoveExtension {
         private static bool CheckMove<T>(this StackCollection<int, T> stacks, MoveInstruction move) {
             return stacks.Count(move.Source) >= move.Number;
         }

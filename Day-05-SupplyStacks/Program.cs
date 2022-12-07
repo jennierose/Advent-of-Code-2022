@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
-using StackCollectionExtensions;
 using StackCollection = Utils.StackCollection<int, string>;
+using StackCollectionExtensions;
 
 class Program {
     private static readonly Regex StackItemPattern = new(@"(\s{3,4}|\[\w\]\s?)");
