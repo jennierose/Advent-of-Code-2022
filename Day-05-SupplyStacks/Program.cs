@@ -33,7 +33,7 @@ class Program {
 
         using (TextReader streamReader = new StreamReader(@"./input")) {
             string? line;
-            Regex columnLabelsPattern = new(@"^\s*(\d+\s+)+$");
+            Regex columnLabelsPattern = new(@"^\s*(\d+\s+)+\d*$");
             Regex stackItemLinePattern = new($"^{StackItemPattern}*$");
 
             while ((line = streamReader.ReadLine()) != null) {
