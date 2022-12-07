@@ -2,10 +2,10 @@ using System.Text.RegularExpressions;
 using StackCollection = Utils.StackCollection<int, string>;
 using StackCollectionExtensions;
 
-class Program {
+internal class Program {
     private static readonly Regex StackItemPattern = new(@"(\s{3,4}|\[\w\]\s?)");
 
-    internal static StackCollection ParseInput(string columnLabels, IEnumerable<string> inputLines) {
+    private static StackCollection ParseInput(string columnLabels, IEnumerable<string> inputLines) {
         StackCollection stacks = new();
         IEnumerable<int> keys = columnLabels
             .Split(Array.Empty<char>(), StringSplitOptions.RemoveEmptyEntries)
@@ -26,7 +26,7 @@ class Program {
         return stacks;
     }
 
-    public static void Main() {
+    private static void Main() {
         string columnLabels = "";
         LinkedList<string> inputLines = new();
         List<MoveInstruction> moveInstructions = new();
