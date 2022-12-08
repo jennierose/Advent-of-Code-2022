@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day-05-SupplyStacks", "Day-
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Day-06-TuningTrouble", "Day-06-TuningTrouble\Day-06-TuningTrouble.fsproj", "{F5D9D556-F5E8-45D3-B4D4-B723C2498C3E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day-07-NoSpaceLeftOnDevice", "Day-07-NoSpaceLeftOnDevice\Day-07-NoSpaceLeftOnDevice.csproj", "{A248279A-959D-47F3-B3EF-1161E35CBE33}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +50,9 @@ Global
 		{F5D9D556-F5E8-45D3-B4D4-B723C2498C3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5D9D556-F5E8-45D3-B4D4-B723C2498C3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5D9D556-F5E8-45D3-B4D4-B723C2498C3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A248279A-959D-47F3-B3EF-1161E35CBE33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A248279A-959D-47F3-B3EF-1161E35CBE33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A248279A-959D-47F3-B3EF-1161E35CBE33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A248279A-959D-47F3-B3EF-1161E35CBE33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
