@@ -57,7 +57,7 @@ let main (args: string []) =
         let pair: string [] = line.Split [||] in (pair[0], pair[1])
 
     let input: seq<string * string> =
-        Seq.cast (File.ReadAllLines(@"./input"))
+        Seq.cast (File.ReadAllLines(@"./input.txt"))
         |> Seq.filter checkFormat.IsMatch
         |> Seq.map splitTuple
 

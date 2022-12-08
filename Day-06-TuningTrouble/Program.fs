@@ -10,7 +10,7 @@ let findMarker (windowSize: int) (text: string) : int option =
 
 [<EntryPoint>]
 let main (args: string []) =
-    let input: string = File.ReadAllText "./input"
+    let input: string = File.ReadAllText "./input.txt"
 
     printfn "--- Part One ---"
     printfn "How many characters need to be processed before the first start-of-packet marker is detected?"

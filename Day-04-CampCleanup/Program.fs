@@ -47,7 +47,7 @@ type Section(left: int, right: int) =
 [<EntryPoint>]
 let main (args: string []) =
     let input: seq<Section * Section> =
-        Seq.cast (File.ReadAllLines @"./input")
+        Seq.cast (File.ReadAllLines @"./input.txt")
         |> Seq.filter Section.checkLine
         |> Seq.map Section.parseLine
 

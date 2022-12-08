@@ -31,7 +31,7 @@ internal class Program {
         LinkedList<string> inputLines = new();
         List<MoveInstruction> moveInstructions = new();
 
-        using (TextReader streamReader = new StreamReader(@"./input")) {
+        using (TextReader streamReader = new StreamReader(@"./input.txt")) {
             string? line;
             Regex columnLabelsPattern = new(@"^\s*(\d+\s+)+\d*$");
             Regex stackItemLinePattern = new($"^{StackItemPattern}*$");

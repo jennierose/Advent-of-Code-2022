@@ -12,7 +12,7 @@
     private static void Main() {
         List<(string, string)> inputs = new();
 
-        foreach (string line in File.ReadLines(@"./input")) {
+        foreach (string line in File.ReadLines(@"./input.txt")) {
             if (line.Length > 0 && line.Length % 2 == 0) {
                 string firstCompartment = line[..(line.Length / 2)];
                 string secondCompartment = line[(line.Length / 2)..];

@@ -3,7 +3,7 @@
         int calorieSubtotal = 0;
         List<int> calorieTotals = new();
 
-        foreach (string line in File.ReadLines(@"./input")) {
+        foreach (string line in File.ReadLines(@"./input.txt")) {
             try {
                 calorieSubtotal += int.Parse(line);
             } catch (FormatException) {
