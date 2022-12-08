@@ -20,27 +20,27 @@ internal class Program {
                 currentDirectory.AddFile(fileName, fileSize);
             }
             // Discover a subdirectory in the current directory => Add a new child to the current node
-            if (DirPattern.IsMatch(line)) {
+            else if (DirPattern.IsMatch(line)) {
                 string dirName = DirPattern.Match(line).Groups[1].Value;
                 currentDirectory.AddDirectory(dirName);
             }
             // Change directory, can only descend into subdirectories that have already been added
-            if (ChdirPattern.IsMatch(line)) {
+            else if (ChdirPattern.IsMatch(line)) {
                 string dirName = ChdirPattern.Match(line).Groups[1].Value;
                 currentDirectory = currentDirectory.GetDirectory(dirName);
             }
         }
 
-        Dictionary<Guid, int> directorySizes = new();
+        Dictionary<DirectoryTree, int> directorySizes = new();
 
         foreach (DirectoryTree node in rootDirectory.DepthFirstTraversal()) {
-            directorySizes[node.UUID] =
+            directorySizes[node] =
                 node.LocalSize +
-                node.Subdirectories.Select(child => directorySizes[child.UUID]).Sum();
+                node.Subdirectories.Select(child => directorySizes[child]).Sum();
         }
 
         int maxTotalSize = 100000;
-        int freeSpace = TotalDiskSpace - directorySizes[rootDirectory.UUID];
+        int freeSpace = TotalDiskSpace - directorySizes[rootDirectory];
         int minSizeToDelete = NeededFreeSpace - freeSpace;
 
         int firstResult = directorySizes.Values.Where(n => n <= maxTotalSize).Sum();

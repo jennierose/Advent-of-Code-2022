@@ -12,7 +12,7 @@ namespace Utils {
             Any = 0xff
         }
 
-        public readonly Guid UUID;
+        private readonly Guid UUID;
         public readonly string Name;
         private readonly Dictionary<string, DirectoryTree> Children;
         private readonly Dictionary<string, int> FileData;
@@ -26,6 +26,10 @@ namespace Utils {
 
         public int LocalSize => FileData.Values.Sum();
         public IEnumerable<DirectoryTree> Subdirectories => Children.Values.AsEnumerable();
+
+        public override bool Equals(object? obj) => obj is DirectoryTree other && other.UUID == UUID;
+
+        public override int GetHashCode() => UUID.GetHashCode();
 
         private DirectoryTree(string dirName, DirectoryTree? parent = null) {
             Name = dirName;
