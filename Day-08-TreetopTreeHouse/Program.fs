@@ -14,10 +14,10 @@ let iterColumn (ls: 't list list) (i: int) : seq<'t> =
         Seq.map (fun (row: 't list) -> row[i]) ls
 
 let scanTallestTrees (trees: seq<'t>) : int list =
-    let idxTrees: seq<int *  't> = Seq.indexed trees
+    let idxTrees: seq<int * 't> = Seq.indexed trees
     let revTrees: seq<int * 't> = Seq.rev idxTrees
-    let pickTallerTree (tallestSoFar: (int * 't)) (currentTree: int * 't) =
-        maxBy snd [tallestSoFar; currentTree]
+    let pickTallerTree (tallestSoFar: int * 't) (currentTree: int * 't) =
+        maxBy snd [ tallestSoFar; currentTree ]
 
     // Scans the sequence of trees both forward and backward,
     // and replaces each item with the height of the tallest tree seen so far.
@@ -62,7 +62,7 @@ let scenicTreeScores (trees: seq<'t>) : int list =
 
 [<EntryPoint>]
 let main (args: string []) =
-    let input: string seq = File.ReadLines "./input.txt"
+    let input: seq<string> = File.ReadLines "./input.txt"
     assert Seq.forall (Seq.forall System.Char.IsDigit) input
 
     let lineToList: string -> int list =
@@ -74,7 +74,7 @@ let main (args: string []) =
         |> Seq.map lineToList
         |> Seq.toList
 
-    let height : int = treeGrid.Length
+    let height: int = treeGrid.Length
     let width: int = treeGrid[0].Length
     assert List.forall ((=) width) (List.map List.length treeGrid)
 
@@ -85,12 +85,13 @@ let main (args: string []) =
     let visibleTrees: int =
         (Seq.distinct >> Seq.length)
         <| seq {
-            for j: int in {0 .. height - 1} do
+            for j: int in { 0 .. height - 1 } do
                 yield!
                     iterRow treeGrid j
                     |> scanTallestTrees
                     |> List.map (fun (i: int) -> (j, i))
-            for i: int in {0 .. width - 1} do
+
+            for i: int in { 0 .. width - 1 } do
                 yield!
                     iterColumn treeGrid i
                     |> scanTallestTrees
@@ -100,12 +101,10 @@ let main (args: string []) =
     // Computes a partial scenic score for each tree in the grid.
     // The row scores only account for what each tree can see on its left and right.
     let rowScores: int list list =
-        Seq.toList
-        <| seq{
-            for j: int in {0 .. height - 1} do
-                iterRow treeGrid j
-                |> scenicTreeScores
-        }
+        { 0 .. height - 1 }
+        |> Seq.map (iterRow treeGrid)
+        |> Seq.map scenicTreeScores
+        |> Seq.toList
 
     // Iterates through each column of the grid, and computes a partial scenic score for each tree.
     // Next, it zips the lists of vertical scores with the *columns* of `rowScores`,
@@ -115,7 +114,7 @@ let main (args: string []) =
     let topScenicScore =
         Seq.max
         <| seq {
-            for i: int in {0 .. width - 1} do
+            for i: int in { 0 .. width - 1 } do
                 iterColumn treeGrid i
                 |> scenicTreeScores
                 |> Seq.zip (iterColumn rowScores i)
