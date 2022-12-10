@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day-07-NoSpaceLeftOnDevice"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Day-08-TreetopTreeHouse", "Day-08-TreetopTreeHouse\Day-08-TreetopTreeHouse.fsproj", "{6B83C97C-E6A3-4D27-A794-2E5256C5528D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day-09-RopeBridge", "Day-09-RopeBridge\Day-09-RopeBridge.csproj", "{D262DED2-B42F-42A1-8254-EDA9C9EC984D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,5 +62,9 @@ Global
 		{6B83C97C-E6A3-4D27-A794-2E5256C5528D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B83C97C-E6A3-4D27-A794-2E5256C5528D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B83C97C-E6A3-4D27-A794-2E5256C5528D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D262DED2-B42F-42A1-8254-EDA9C9EC984D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D262DED2-B42F-42A1-8254-EDA9C9EC984D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D262DED2-B42F-42A1-8254-EDA9C9EC984D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D262DED2-B42F-42A1-8254-EDA9C9EC984D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
