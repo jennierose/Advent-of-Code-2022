@@ -21,6 +21,16 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Day-08-TreetopTreeHouse", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day-09-RopeBridge", "Day-09-RopeBridge\Day-09-RopeBridge.csproj", "{D262DED2-B42F-42A1-8254-EDA9C9EC984D}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Day-10-CathodeRayTube", "Day-10-CathodeRayTube\Day-10-CathodeRayTube.fsproj", "{2B792B90-4EDB-48F0-BD67-371403099EC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day-11-MonkeyInTheMiddle", "Day-11-MonkeyInTheMiddle\Day-11-MonkeyInTheMiddle.csproj", "{10187471-5008-4F6C-8FEE-B9B8FD16CC0A}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Day-12-HillClimbingAlgorithm", "Day-12-HillClimbingAlgorithm\Day-12-HillClimbingAlgorithm.fsproj", "{EFABDBAD-28E8-46D4-9486-0D95C8453E16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day-13-DistressSignal", "Day-13-DistressSignal\Day-13-DistressSignal.csproj", "{897EB702-133B-4FAE-87AB-1AD592DE7316}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Day-12-RegolithReservoir", "Day-12-RegolithReservoir\Day-12-RegolithReservoir.fsproj", "{99617184-7112-4C6B-94B1-B2EFF5DA763B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,5 +76,25 @@ Global
 		{D262DED2-B42F-42A1-8254-EDA9C9EC984D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D262DED2-B42F-42A1-8254-EDA9C9EC984D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D262DED2-B42F-42A1-8254-EDA9C9EC984D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B792B90-4EDB-48F0-BD67-371403099EC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B792B90-4EDB-48F0-BD67-371403099EC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B792B90-4EDB-48F0-BD67-371403099EC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B792B90-4EDB-48F0-BD67-371403099EC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10187471-5008-4F6C-8FEE-B9B8FD16CC0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10187471-5008-4F6C-8FEE-B9B8FD16CC0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10187471-5008-4F6C-8FEE-B9B8FD16CC0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10187471-5008-4F6C-8FEE-B9B8FD16CC0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFABDBAD-28E8-46D4-9486-0D95C8453E16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFABDBAD-28E8-46D4-9486-0D95C8453E16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFABDBAD-28E8-46D4-9486-0D95C8453E16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFABDBAD-28E8-46D4-9486-0D95C8453E16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{897EB702-133B-4FAE-87AB-1AD592DE7316}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{897EB702-133B-4FAE-87AB-1AD592DE7316}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{897EB702-133B-4FAE-87AB-1AD592DE7316}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{897EB702-133B-4FAE-87AB-1AD592DE7316}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99617184-7112-4C6B-94B1-B2EFF5DA763B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99617184-7112-4C6B-94B1-B2EFF5DA763B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99617184-7112-4C6B-94B1-B2EFF5DA763B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99617184-7112-4C6B-94B1-B2EFF5DA763B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
